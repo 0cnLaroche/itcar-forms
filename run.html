@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+<head>
+ <meta charset="UTF-8">
+</head>
+<body>
+  <div class="reqForm">
+    <h2>RUN code (Internal Order)</h2>
+  <form id="RUNCode" class="codeForm"action="/run" method="post">
+    RUN type: 
+    <select id="runtype" name="type">
+      <option selected disabled>Choose here</option>
+      <option value="Service" onclick='selectRunType("Service");'>Service</option>
+      <option value="Application Maintenance" onclick='selectRunType("Application Maintenance");'>Application Maintenance</option>
+      <option value="Business Management" onclick='selectRunType("Business Management");'>Business Management</option>
+    </select>
+    <br>
+    <span id="nameEN">Description</span>
+    <input type="text" name="nameEN"><br>
+    <span id="nameFR">Description français</span>
+    <input type="text" name="nameFR"><br>
+    Owner:
+    <input type="text" name="manager"><br>
+    Cost center responsible:
+    <input type="text" name="costcenter"><br>
+    <span id="ActivityID">Activity ID :</span>
+    <input id="activityInput" type="text" name="ActivityID"><br>
+    Comments:<br>
+    <textarea type="text" name="comments" rows="4" cols="50"></textarea><br>
+    <button type="reset">Reset</button>
+    <button type="submit">Send</button>
+  </form>
+  </div>
+</body>
+<script>
+  var selectRunType = function(type) {
+    switch (type) {
+      case "Service":
+        document.getElementById('ActivityID').innerHTML = 'Service ID: <br> Please refer to <a href="http://dialogue/grp/SS-SS/Lists/Supporting%20Services%20List/Standard%20Search.aspx?PageView=Shared&InitialTabId=Ribbon.WebPartPage&VisibilityContext=WSSWebPartPage&View={AE2C14F4-44F6-4D2E-BB08-68321E2D741E}&FilterClear=1">IITB Supporting Services List</a>'
+        document.getElementById('activityInput').disabled = false;
+        break;
+      case "Application Maintenance":
+        document.getElementById('ActivityID').innerHTML = 'CSD ID: <br> Please refer to the <a href="http://dialogue/proj/ITCD-RMTI/APM-GPA/Site%20Pages%20Library/ActiveSolutions.aspx"> Corporate Solution Directory</a>'
+        document.getElementById('activityInput').disabled = false;
+        break;
+      case "Business Management":
+        document.getElementById('activityInput').disabled = true;
+      default:
+        console.log("Wrong argument");
+    }
+  }
+</script>
+</html>

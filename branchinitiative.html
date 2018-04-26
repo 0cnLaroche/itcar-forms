@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+ <meta charset="UTF-8">
+</head>
+<body>
+  <!--Branch initiative-->
+  <div class="reqForm">
+    <h2>Branch Initiative Project Code (N-code)</h2>
+  <form id="branchInitiative" class="codeForm" action="/branchinitiative" method="post">
+    Initiative name:
+    <input type="text" name="nameEN"><br>
+    Nom de l'initiative:
+    <input type="text" name="nameFR"><br>
+    Description of the initiative:<br>
+    <textarea type="text" name="description" rows="15" cols="50"></textarea><br>
+    CATS Approver:
+    <input type="text" name="manager"><br>
+    Cost center responsible:
+    <input type="text" name="costcenter"><br>
+    Expected duration :<br>
+    From :
+    <input type="date" name='from'>
+    To:
+    <input type="date" name='to'><br>
+    Total estimated cost :
+    <input type="number" min="0" step="1000" name="cost"><br/>
+    Comments: <br>
+    <textarea type="text" name="comments" rows="4" cols="50"></textarea><br>
+    <button type="reset">Reset</button>
+    <button type="submit">Send</button>
+  </form>
+  </div>
+</body>
+</html>

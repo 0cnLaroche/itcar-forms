@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+<head>
+ <meta charset="UTF-8">
+</head>
+<body>
+  <!--Branch initiative-->
+  <div class="reqForm">
+    <h2>CATS Time change</h2>
+  <form id="z600" class="codeForm" action="/timechange" method="post">
+    Requester:
+    <input type="text" name="requester"><br />
+    Employee Last Name:
+    <input type="text" name="lastname">
+    First Name:
+    <input type="text" name="firstname"><br>
+    Month
+    <input type="date" name='month'>
+    Total hours
+    <input type="number" min="0" step="0.25" name="hours"><br>
+    Current code:
+    <input type="text" name="currentcode">
+    New code:
+    <input type="text" name="newcode"><br>
+    Details:<br>
+    <textarea type="text" name="comments" rows="15" cols="50"></textarea><br>
+    <button type="reset">Reset</button>
+    <button type="submit">Send</button>
+  </form>
+  </div>
+</body>
+</html>
